@@ -41,7 +41,8 @@ let contenedor = new Contenedor('productos.txt');
 
 let resultadoProductos = async ()=>{ 
     let productos = await contenedor.getAll();
-    return productos;
+    let productosNombre = await productos.map(prod=>prod.nombre)
+    return productosNombre;
 }
 
 let resultadoProductoRandom = async(id)=>{
