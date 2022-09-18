@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/BrunodeRenzis/Desafios-backend/issues"
   },
-  "homepage": "https://github.com/BrunodeRenzis/Desafios-backend#readme"
+  "homepage": "https://github.com/BrunodeRenzis/Desafios-backend#readme",
+  "dependencies": {
+    "random": "^3.0.6"
+  }
 }

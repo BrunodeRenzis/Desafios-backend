@@ -5,42 +5,33 @@ class Contenedor{
         this.file = file;
     }
     async save(producto){
-        let contenido = await this.getAll();
-        let newId = 0;
-        if(contenido.length>0){
-            newId = contenido.length+1;
-        } else{
-            newId = 1;
-        }
-        producto.id = newId;
-        contenido.push(producto);
-        await fs.promises.writeFile(this.file,JSON.stringify(contenido)); 
+        let productosObj = await this.getAll();
+        productosObj.push(producto);
+        await fs.promises.writeFile(this.file,JSON.stringify(productosObj));
     }
     async getAll(){
-        let contenido = await fs.promises.readFile(this.file);
-        let contenidoObj = JSON.parse(contenido);
-        return contenidoObj;
+        let productos = await fs.promises.readFile(this.file);
+        let productosObj = JSON.parse(productos);
+        return productosObj;
     }
 
     async getById(id){
-        let contenido = await this.getAll();
-        let resultado = contenido.find(elem=>elem.id == id)
-        return resultado;
+        let productos = await this.getAll();
+        let productoRetornado = productos.find((prod)=>prod.id==id);
+        console.log(productoRetornado);
     }
 
     async deleteById(id){
-        let contenido = await this.getAll();
-        let nuevoContenido = contenido.filter(elem => elem.id !== id);
-        await fs.promises.writeFile(this.file,JSON.stringify(nuevoContenido));
+        let productos = await this.getAll();
+        let nuevaListaProductos = productos.filter((prod)=>prod.id!==id);
+        console.log(nuevaListaProductos);
+        await fs.promises.writeFile(this.file,JSON.stringify(nuevaListaProductos));
     }
     async deleteAll(){
-        let nuevoContenido = []
-        await fs.promises.writeFile(this.file,JSON.stringify(nuevoContenido));
+        await fs.promises.writeFile(this.file,'[]');
     }
 }
 
 let prueba = new Contenedor('productos.txt');
-//prueba.save({nombre:"Zapatillaasdass",precio:15400});
-// prueba.getById(1);
-//prueba.deleteById(1);
+//prueba.save({name:"Bruno",id:2});
 prueba.deleteAll();

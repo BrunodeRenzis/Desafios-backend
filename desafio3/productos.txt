@@ -1,0 +1,1 @@
+[{"id":1,"nombre":"Lavaropas","precio":85000},{"id":2,"nombre":"Lavaropas2","precio":85000},{"id":3,"nombre":"Lavaropas3","precio":85000}]
