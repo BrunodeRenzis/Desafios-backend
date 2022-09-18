@@ -34,32 +34,39 @@ class Contenedor{
         await fs.promises.writeFile(this.file,'[]');
     }
 
+    async getLength(){
+        let list = await this.getAll();
+        return await list.length;
+    }
+
 
 }
 
 let contenedor = new Contenedor('productos.txt');
 
-let resultadoProductos = async ()=>{ 
-    let productos = await contenedor.getAll();
-    let productosNombre = await productos.map(prod=>prod.nombre)
-    return productosNombre;
+const getProductos = async ()=>{
+    listaProductos = JSON.stringify(await contenedor.getAll());
+    return listaProductos;
 }
 
-let resultadoProductoRandom = async(id)=>{
-    let productoRandom = await contenedor.getById(id);
+const getProductoRandom = async (min,max)=>{
+    let id = Math.floor(Math.random()*(max-min)+min)
+    let productoRandom = JSON.stringify(await contenedor.getById(id));
     return productoRandom;
 }
+
+
 
 app.get('/', (req, res) => {
     res.send(`Root`);
 })
 
-app.get('/productos', async (req, res) => {
-    res.send(`La lista de productos es: ${JSON.stringify(await resultadoProductos())}`);
+app.get('/productos',async (req, res) => {
+    res.send(`La lista de productos es: ${await getProductos().catch("No se ha podido obtener la lista")}`);
 })
 
-app.get('/productoRandom', async (req, res) => {
-    res.send(`El producto es: ${JSON.stringify(await resultadoProductoRandom(Math.floor(Math.random()*3)))}`);
+app.get('/productoRandom',async (req, res) => {
+    res.send(`El producto es: ${await getProductoRandom(1,await contenedor.getLength()).catch("No se ha podido obtener el producto")}`);
 })
 
 
