@@ -12,37 +12,52 @@ const findProductById = (id)=>{
     return productos.find(producto => producto.id==id);
 }
 
+const addProduct = (req,res)=>{
+    const {producto} = req.body;
+    producto.id = productos.length+1;
+    productos.push(producto);
+    res.send({productoAgregado: producto});
+}
+
+const getProducts = (req,res)=>{
+    const {id} = req.params;
+    res.send({producto: findProductById(id)});
+}
+
+const modifyProduct = (req,res)=>{
+    const {id} = req.params;
+    const {producto} = req.body;
+    producto.id = id;
+    console.log(producto);
+    console.log("Indice del producto: ", productos[id-1]);
+    productos.splice(parseInt(id-1),1,producto);
+    res.send({productoModificado: producto});
+}
+
+const deleteProduct = (req,res)=>{
+    const {id} = req.params;
+    const producto = productos.splice(parseInt(id-1),1);
+    res.send({borrado:producto});
+}
+
 routerApiProductos.get('', (req,res)=>{
     res.send({productos: productos});
 })
 
 routerApiProductos.get('/:id', (req,res)=>{
-    const {id} = req.params;
-    console.log(id);
-    res.send({producto: findProductById(id)});
+    getProducts(req,res);
 })
 
 routerApiProductos.post('', (req,res)=>{
-    const {producto} = req.body;
-    console.log(producto);
-    producto.id = productos.length+1;
-    productos.push(producto);
-    res.send({productoAgregado: producto});
+    addProduct(req,res);
 })
 
 routerApiProductos.put('/:id',(req,res)=>{
-    const {id} = req.params;
-
-    const {producto} = req.body;
-    productos.splice(productos[parseInt(id)-1],1,producto);
-    
-    res.send({productoModificado: producto});
+    modifyProduct(req,res);
 })
 
 routerApiProductos.delete('/:id',(req,res)=>{
-    const {id} = req.params;
-    const producto = productos.splice(parseInt(id-1),1);
-    res.send({borrado:producto});
+    deleteProduct(req,res);
 })
 
 
