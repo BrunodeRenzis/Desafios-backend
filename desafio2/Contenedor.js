@@ -17,8 +17,9 @@ class Contenedor{
 
     async getById(id){
         let productos = await this.getAll();
-        let productoRetornado = productos.find((prod)=>prod.id==id);
+        let productoRetornado = await productos.find((prod)=>prod.id==id);
         console.log(productoRetornado);
+        return productoRetornado;
     }
 
     async deleteById(id){
@@ -30,8 +31,13 @@ class Contenedor{
     async deleteAll(){
         await fs.promises.writeFile(this.file,'[]');
     }
+
+    async getLength(){
+        let list = await this.getAll();
+        return await list.length;
+    }
+
+
 }
 
-let prueba = new Contenedor('productos.txt');
-//prueba.save({name:"Bruno",id:2});
-prueba.deleteAll();
+module.exports = Contenedor;
