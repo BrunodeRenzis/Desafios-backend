@@ -1,0 +1,42 @@
+<div class="">
+    <h1 class="text-center text-bg-dark p-3">Agregar Computadora</h1>
+    {{#if emptyValue}}
+        <p>
+            {{ message }}
+        </p>
+    {{/if}}
+
+<form class="m-auto mt-5" style="width: 70%;" action="/productos" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label w-80">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="thumbnail" class="form-label w-80">URL</label>
+            <input type="text" class="form-control" id="thumbnail" name="thumbnail" required>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-md-10">
+                <input value="Cargar producto" class="btn btn-dark" type="submit">
+            </div>
+        </div>
+    </form>
+
+    <form class="p-3" action="/productos" method="get">
+        <button class="btn btn-dark">Ver productos</button>
+    </form>
+
+    <div class="text-center">
+    <div>
+        <p>Flor Hnatiuk</p>
+        <p>2022</p>
+    </div>
+</div>
+</div>

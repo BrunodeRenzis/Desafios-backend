@@ -1,0 +1,33 @@
+<%- include( 'templates/head' ) %>
+<body>
+    <%- include( 'templates/navbar' ) %>
+    <h1 class="text-center text-bg-dark p-3">Nuestras computadoras</h1>
+    <% if ( products.length == 0 ){ %>
+        <div class="alert alert-warning m-auto" style="width: 25%;" role="alert">
+            No se encontraron productos
+        </div>
+    <% } else { %>
+        <table class="table table-light m-auto mt-5" style="width: 70%;">
+            <thead>
+                <tr>
+                    <th scope="col">Computadora</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach( product => { %>
+                    <tr scope="row">
+                        <td><%= product.title %></td>
+                        <td>$<%= product.price %></td>
+                        <td><img src="<%= product.thumbnail %>" alt="<%= product.title %>" style="width: 100px; height: 100px;"></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <%} %>
+    <%- include( 'templates/footer' ) %>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>

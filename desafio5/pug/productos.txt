@@ -1,0 +1,67 @@
+[
+	{
+		"brand": "Apple",
+		"title": "MacBook Air",
+		"chip": "M1",
+		"price": 999,
+		"thumbnail": "https://www.apple.com/v/mac/home/bq/images/overview/compare/compare_mba__fchj615oz0yi_small.png",
+		"id": 1
+	},
+	{
+		"brand": "Apple",
+		"title": "MacBook Air",
+		"chip": "M2",
+		"price": 1199,
+		"thumbnail": "https://www.apple.com/v/mac/home/bq/images/overview/compare/compare_mbam2__bdesjk99hf4i_small.png",
+		"id": 2
+	},
+	{
+		"brand": "Apple",
+		"title": "MacBook Pro 13 pulgadas",
+		"price": 1299,
+		"thumbnail": "https://www.apple.com/v/mac/home/bq/images/overview/compare/compare_mbp13__euj5z15300om_small.png",
+		"id": 3
+	},
+	{
+		"brand": "Apple",
+		"title": "MacBook Pro 14 pulgadas",
+		"price": 1999,
+		"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_945710-MLA48354170509_112021-O.webp",
+		"id": 4
+	},
+	{
+		"brand": "Apple",
+		"title": "iMac 24 pulgadas",
+		"price": 1299,
+		"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_970068-MLA49140947261_022022-O.webp",
+		"id": 5
+	},
+	{
+		"brand": "ASUS",
+		"title": "ZenBook 14",
+		"price": 1299,
+		"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_732599-MLA48061930662_102021-F.webp",
+		"id": 6
+	},
+	{
+		"brand": "ASUS",
+		"title": "VivoBook 15",
+		"price": 1299,
+		"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_908593-MLA49420869607_032022-F.webp",
+		"id": 7
+	},
+	{
+		"brand": "ASUS",
+		"title": "TUF Dash F15",
+		"price": 1299,
+		"thumbnail": "https://www.asus.com/media/Odin/Websites/global/Series/33/P_setting_xxx_0_90_end_185.png?webp",
+		"id": 8
+	},
+	{
+		"brand": "ASUS",
+		"title": "ROG Zephyrus G14",
+		"price": 1299,
+		"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_956028-MLA48157829201_112021-O.webp",
+		"id": 9
+	}
+]

@@ -1,0 +1,31 @@
+<%- include( 'templates/head' ) %>
+<body>
+    <%- include( 'templates/navbar' ) %>
+    <h1 class="text-center text-bg-dark p-3">Agregar computadora</h1>
+    <form action="/api/productos" method="POST" style="width: 70%;" class="m-auto mt-5">
+        <div class="mb-3">
+            <label for="title" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label w-80">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="thumbnail" class="form-label w-80">URL</label>
+            <input type="text" class="form-control" id="thumbnail" name="thumbnail" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark m-auto mt-5 p-2">Guardar</button>
+    </form>
+
+    <% if ( mesage != ''){ %>
+    <div class="alert alert-success m-auto" style="width: 25%;" role="alert">
+        <%= mesage %>
+    </div>
+    <% } %>
+    <%- include( 'templates/footer' ) %>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
