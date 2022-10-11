@@ -1,1 +1,1 @@
-[[{"autor":"brunoderenzisrubinetti@hotmail.com","mensaje":"Que ondaaaa?"},{"autor":"maurobarrera@hotmail.com","mensaje":"Tenés comida?"},{"autor":"prueba@prueba.com","mensaje":"dsad"}]]
+[]

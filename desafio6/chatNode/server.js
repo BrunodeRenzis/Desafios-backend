@@ -19,7 +19,7 @@ const productos = [
 
 const mensajes = [
     {autor: "brunoderenzisrubinetti@hotmail.com", mensaje:"Que ondaaaa?"},
-    {autor: "maurobarrera@hotmail.com", mensaje:"Tenés comida?"}
+    {autor: "maurobarrera@hotmail.com", mensaje:"ke ondah perrito malvado"}
 ];
 
 io.on('connection',(socket)=>{
