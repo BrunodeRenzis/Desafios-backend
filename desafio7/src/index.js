@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-const config = require('./config/app');
 const app = express();
 const {Server : HttpServer} = require('http')
 const {Server : IOServer} = require('socket.io');
@@ -20,9 +19,9 @@ app.use((err, req, res, next) => {
 });
 
 /* configuro las rutas */
-const mensajeRouter = require('./routes/mensajes');
+const mensajeRouter = require('../routes/mensajes.js');
 app.use('/api', mensajeRouter);
-const productoRouter = require("./routes/productos");
+const productoRouter = require("../routes/productos.js");
 app.use('/api', productoRouter);
 
 /* Conecto con socket */
@@ -55,7 +54,7 @@ io.on('connection', (socket) => {
 })
 
 /* obtengo el puerto del enviroment o de la configuracion de la app */
-const puerto = process.env.PORT || config.PUERTO;
+const puerto = process.env.PORT || 8080;
 
 // pongo a escuchar el servidor en el puerto indicado
 const server = app.listen(puerto, () => {
