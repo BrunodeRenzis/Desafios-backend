@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/BrunodeRenzis/Desafios-backend#readme",
   "dependencies": {
-    "random": "^3.0.6"
+    "knex": "^2.3.0",
+    "pg": "^8.8.0",
+    "random": "^3.0.6",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.1.2"
   }
 }
